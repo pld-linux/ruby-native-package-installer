@@ -3,7 +3,7 @@
 %bcond_without	doc			# don't build ri/rdoc
 
 %define pkgname native-package-installer
-Summary:	Helps installing native packages on "gem install".freeze
+Summary:	Helps installing native packages on "gem install"
 Name:		ruby-%{pkgname}
 Version:	1.0.4
 Release:	1
@@ -26,9 +26,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Users need to install native packages to install an extension library
 that depends on native packages. It bores users because users need to
 install native packages and an extension library separately.
-native-package-installer helps to install native packages on
-"gem install". Users can install both native packages and
-an extension library by one action, "gem install".freeze
+native-package-installer helps to install native packages on "gem
+install". Users can install both native packages and an extension
+library by one action, "gem install".
 
 %package rdoc
 Summary:	HTML documentation for %{pkgname}
@@ -76,7 +76,6 @@ export LC_ALL=en_US.UTF-8
 
 rdoc --ri --op ri lib
 rdoc --op rdoc lib
-# rm -r ri/NOT_THIS_MODULE_RELATED_DIRS
 rm ri/created.rid
 
 %install
@@ -84,8 +83,6 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{ruby_vendorlibdir},%{ruby_specdir}}
 cp -a lib/* $RPM_BUILD_ROOT%{ruby_vendorlibdir}
 cp -p %{pkgname}-%{version}.gemspec $RPM_BUILD_ROOT%{ruby_specdir}
-
-install -d $RPM_BUILD_ROOT{%{ruby_vendorlibdir},%{ruby_specdir}}
 
 %if %{with doc}
 install -d $RPM_BUILD_ROOT{%{ruby_rdocdir}/%{name}-%{version},%{ruby_ridir}}
