@@ -6,7 +6,7 @@
 Summary:	Helps installing native packages on "gem install".freeze
 Name:		ruby-%{pkgname}
 Version:	1.0.4
-Release:	0.1
+Release:	1
 License:	LGPL v3+
 #Source0:	http://rubyforge.org/frs/download.php/18699/%{pkgname}-%{version}.tgz
 Source0:	http://rubygems.org/downloads/%{pkgname}-%{version}.gem
