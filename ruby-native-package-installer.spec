@@ -8,17 +8,12 @@ Name:		ruby-%{pkgname}
 Version:	1.0.4
 Release:	1
 License:	LGPL v3+
-#Source0:	http://rubyforge.org/frs/download.php/18699/%{pkgname}-%{version}.tgz
-Source0:	http://rubygems.org/downloads/%{pkgname}-%{version}.gem
-# Source0-md5:	84f4c35d5c9e858c94b4f650a24ff8c2
 Group:		Development/Languages
+Source0:	https://rubygems.org/downloads/%{pkgname}-%{version}.gem
+# Source0-md5:	84f4c35d5c9e858c94b4f650a24ff8c2
 URL:		https://github.com/ruby-gnome2/native-package-installer
 BuildRequires:	rpm-rubyprov
 BuildRequires:	rpmbuild(macros) >= 1.665
-# optional locale BR, see ri/rdoc building below
-%if %(locale -a | grep -q '^en_US$'; echo $?)
-BuildRequires:	glibc-localedb-all
-%endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -69,13 +64,9 @@ end'
 
 #'
 
-# with rdoc/ri:
-# optional locale force, see BR above as well
-# UTF8 locale needed for doc generation
-export LC_ALL=en_US.UTF-8
-
 rdoc --ri --op ri lib
 rdoc --op rdoc lib
+rm ri/cache.ri
 rm ri/created.rid
 
 %install
