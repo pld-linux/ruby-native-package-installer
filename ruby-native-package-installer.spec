@@ -6,7 +6,7 @@
 Summary:	Helps installing native packages on "gem install"
 Name:		ruby-%{pkgname}
 Version:	1.0.4
-Release:	1
+Release:	2
 License:	LGPL v3+
 Group:		Development/Languages
 Source0:	https://rubygems.org/downloads/%{pkgname}-%{version}.gem
