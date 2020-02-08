@@ -6,12 +6,14 @@
 Summary:	Helps installing native packages on "gem install"
 Summary(pl.UTF-8):	Pomoc przy instalowaniu pakietów natywnych przy "gem install"
 Name:		ruby-%{pkgname}
-Version:	1.0.7
+Version:	1.0.9
 Release:	1
 License:	LGPL v3+
 Group:		Development/Languages
+# tarballs: https://github.com/ruby-gnome2/native-package-installer/releases
+# gems: https://rubygems.org/gems/native-package-installer
 Source0:	https://rubygems.org/downloads/%{pkgname}-%{version}.gem
-# Source0-md5:	946f4e4bf2792664e31937e0197d7603
+# Source0-md5:	e31f13f221831458ed5c05f7b12111de
 URL:		https://github.com/ruby-gnome2/native-package-installer
 BuildRequires:	rpm-rubyprov
 BuildRequires:	rpmbuild(macros) >= 1.665
@@ -96,7 +98,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README.md
+%doc README.md doc/text/news.md
 %{ruby_vendorlibdir}/%{pkgname}.rb
 %{ruby_vendorlibdir}/%{pkgname}
 %{ruby_specdir}/%{pkgname}-%{version}.gemspec
