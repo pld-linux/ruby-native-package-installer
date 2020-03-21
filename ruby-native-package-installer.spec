@@ -7,7 +7,7 @@ Summary:	Helps installing native packages on "gem install"
 Summary(pl.UTF-8):	Pomoc przy instalowaniu pakietów natywnych przy "gem install"
 Name:		ruby-%{pkgname}
 Version:	1.0.9
-Release:	1
+Release:	2
 License:	LGPL v3+
 Group:		Development/Languages
 # tarballs: https://github.com/ruby-gnome2/native-package-installer/releases
